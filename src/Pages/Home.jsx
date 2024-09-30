@@ -47,7 +47,7 @@ const Home = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `https://ecomm-backend-dc9u.onrender.com/api/products/edit/${editProduct._id}`,
+        `https://ecomm-backend-dc9u.onrender.com/api/products/${editProduct._id}`,
         formData
       );
       setEditProduct(null); //clear after edited
@@ -61,7 +61,7 @@ const Home = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://ecomm-backend-dc9u.onrender.com/api/products/delete/${id}`
+        `https://ecomm-backend-dc9u.onrender.com/api/products/delete/${id.toString()}`
       );
       fetchData(); // to refresh the product list after deleting
     } catch (error) {
@@ -70,7 +70,7 @@ const Home = () => {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-2">
       <div className="row g-4">
         {products.map((ele) => (
           <div className="col-md-4 col-sm-6" key={ele._id}>
@@ -108,7 +108,7 @@ const Home = () => {
       </div>
 
       {editProduct && (
-        <div className="mt-4">
+        <div className="mt-2">
           <h3>Edit Product</h3>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
