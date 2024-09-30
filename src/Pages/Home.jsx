@@ -61,7 +61,7 @@ const Home = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://ecomm-backend-dc9u.onrender.com/api/products/delete/${id.toString()}`
+        `https://ecomm-backend-dc9u.onrender.com/api/products/${id.toString()}`
       );
       fetchData(); // to refresh the product list after deleting
     } catch (error) {
