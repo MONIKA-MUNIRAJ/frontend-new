@@ -29,7 +29,7 @@ const CreateProduct = () => {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-3">
       <h3>Create New Product</h3>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -43,7 +43,7 @@ const CreateProduct = () => {
             required
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-2">
           <label className="form-label">Product Price</label>
           <input
             type="number"
@@ -54,7 +54,7 @@ const CreateProduct = () => {
             required
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-2">
           <label className="form-label">Product Image</label>
           <input
             type="text"
